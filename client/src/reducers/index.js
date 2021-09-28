@@ -8,7 +8,7 @@ import {
 } from "../actions/actions_types";
 
 import { filter } from "../controllers/filters";
-import { temperamentToString } from "../controllers/temperamentsToString";
+import { temperamentFromArrToString, temperamentFromObjToString } from "../controllers/temperamentsToString";
 
 const initialState = {
   allbreeds: [],
@@ -22,13 +22,13 @@ const rootReducer = (state = initialState, action) => {
     case GET_BREED:
       return {
         ...state,
-        allbreeds: temperamentToString(action.payload),
-        breeds: temperamentToString(action.payload),
+        allbreeds: temperamentFromArrToString(action.payload),
+        breeds: temperamentFromArrToString(action.payload),
       };
     case GET_DETAIL:
       return {
         ...state,
-        detailed: temperamentToString(action.payload),
+        detailed: temperamentFromObjToString(action.payload),
       };
     case GET_TEMPERAMENTS:
       return {

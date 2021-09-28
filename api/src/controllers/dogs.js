@@ -94,7 +94,7 @@ const getDogsById = async (idRaza, res) => {
         : res.send("There is not breeds for this ID");
     } else {
       //ID for breeds from the DB
-      const detail = await Breed.findOne({
+      const detail = await Dog.findOne({
         where: { id: idRaza },
         include: [
           {

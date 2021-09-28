@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.detail {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
