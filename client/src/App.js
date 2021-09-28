@@ -4,7 +4,7 @@ import LandingPage from "./containers/landingPage/LandingPage";
 import NavBar from "./containers/navBar/NavBar";
 import Home from "./containers/home/Home";
 import DetailedBreed from "./components/detailedBreed/DetailedBreed";
-// import CreateBreed from "./components/CreateBreed/CreateBreed";
+import AddNewBreed from "./components/addNewBreed/AddNewBreed";
 import "./App.css";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/home" component={Home} />             
         <Route exact path="/home/:id" component={DetailedBreed} />
         <Route path="/addbreed" component={NavBar} /> 
-        {/* <Route path="/addbreed" component={CreateBreed} /> */}
+        <Route path="/addbreed" component={AddNewBreed} />
       </div>
     </Router>
   );

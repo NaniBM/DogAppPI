@@ -1,0 +1,11 @@
+form {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+   }
+   h2 {
+       margin: 1em auto 0 auto;
+   }
+   form {
+       display: grid;
+   }
