@@ -6,6 +6,10 @@ form {
    h2 {
        margin: 1em auto 0 auto;
    }
-   form {
-       display: grid;
+   .danger {
+    color: red
+   }
+
+   .disabled {
+       color:royalblue
    }

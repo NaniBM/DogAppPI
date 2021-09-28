@@ -8,7 +8,10 @@ import {
 } from "../actions/actions_types";
 
 import { filter } from "../controllers/filters";
-import { temperamentFromArrToString, temperamentFromObjToString } from "../controllers/temperamentsToString";
+import {
+  temperamentFromArrToString,
+  temperamentFromObjToString,
+} from "../controllers/temperamentsToString";
 
 const initialState = {
   allbreeds: [],

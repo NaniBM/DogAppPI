@@ -8,10 +8,9 @@ export default function FilterByMood() {
   useEffect(() => dispatch(getTemperaments()), []);
   const { temperaments } = useSelector((state) => state);
 
-  
   const filter = (e) => {
-    dispatch(filterBy(e.target.value, 'temperament'));
-    console.log(typeof e.target.value)
+    dispatch(filterBy(e.target.value, "temperament"));
+    console.log(typeof e.target.value);
   };
 
   return (

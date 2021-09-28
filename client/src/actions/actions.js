@@ -44,12 +44,10 @@ export const filterBy = (condition, attribute1) => {
     type: FILTER,
     payload: {
       condition,
-      attribute1
-    } 
-
+      attribute1,
+    },
   };
 };
-
 
 export const searchByName = (name) => {
   return async function (dispatch) {

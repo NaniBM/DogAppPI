@@ -7,11 +7,11 @@ export default function FilterByBreed() {
   const { allbreeds } = useSelector((state) => state);
 
   const filter = (e) => {
-    dispatch(filterBy(e.target.value, 'name'));
+    dispatch(filterBy(e.target.value, "name"));
   };
 
   let dogNames = allbreeds.map((breed) => breed.name).sort();
-  
+
   return (
     <select name="selectBreed" onChange={filter}>
       <option key={"selectBreed"} selected disabled>

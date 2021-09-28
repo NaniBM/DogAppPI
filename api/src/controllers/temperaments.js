@@ -23,30 +23,29 @@ const temperamentList = async () => {
 
 //getting temeraments from DB, if empty, charge from API
 const loadTemperaments = async () => {
-    try {
-        let moodsDB = await Temperament.findAll();
-        if (!moodsDB || !moodsDB.length) {
-          moodsDB = await temperamentList();
-          for (let mood of moodsDB) {
-            await Temperament.findOrCreate({
-              where: { name: mood },
-            });
-          }
-        }
-        return moodsDB;
-    } catch (error) {
-        console.error(error)
+  try {
+    let moodsDB = await Temperament.findAll();
+    if (!moodsDB || !moodsDB.length) {
+      moodsDB = await temperamentList();
+      for (let mood of moodsDB) {
+        await Temperament.findOrCreate({
+          where: { name: mood },
+        });
+      }
     }
+    return moodsDB;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const getTemperaments = async (res) => {
-     try {
-        const moods = await loadTemperaments();        
-        moods ? res.send(moods.sort((a, b) => a.name.localeCompare(b.name))) : null
-    } catch (error) {
-        console.error(error)
-    }
- 
+  try {
+    const moods = await loadTemperaments();
+    moods ? res.send(moods.sort((a, b) => a.name.localeCompare(b.name))) : null;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 module.exports = { getTemperaments };

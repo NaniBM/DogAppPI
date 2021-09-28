@@ -2,11 +2,10 @@ import "./Pagination.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Breeds from "../breeds/Breeds";
-import Pages from "../pages/Pages"
+import Pages from "../pages/Pages";
 import { getBreed } from "../../actions/actions";
 
 export default function Pagination() {
-
   const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage] = useState(8);
   const [pageNumberLimit] = useState(8);
@@ -26,7 +25,9 @@ export default function Pagination() {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = breeds ? breeds.slice(indexOfFirstItem, indexOfLastItem) : [];
+  const currentItems = breeds
+    ? breeds.slice(indexOfFirstItem, indexOfLastItem)
+    : [];
 
   const paginate = (pageNumber) => setcurrentPage(pageNumber);
 
@@ -56,8 +57,8 @@ export default function Pagination() {
     pageDecrementBtn = <li onClick={handlePrevButton}> &hellip;</li>;
   }
 
-  return (
-    currentItems.length ? <div className='pagination'>
+  return currentItems.length ? (
+    <div className="pagination">
       <Breeds items={currentItems} />
       <ul className="pageNumbers">
         <Pages
@@ -72,6 +73,6 @@ export default function Pagination() {
           pageIncrementBtn={pageIncrementBtn}
         />
       </ul>
-    </div> : null
-  );
+    </div>
+  ) : null;
 }
