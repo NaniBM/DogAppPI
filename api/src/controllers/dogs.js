@@ -91,7 +91,7 @@ const getDogsById = async (idRaza, res) => {
       );
       detailedBreed
         ? res.send(detailedBreed)
-        : res.send("No hay razas para ese Id");
+        : res.send("There is not breeds for this ID");
     } else {
       //ID for breeds from the DB
       const detail = await Breed.findOne({

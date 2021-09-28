@@ -1,0 +1,19 @@
+
+.pagination{
+    width: 85vw;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.pageNumbers {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    border: none;    
+    height: 30px;
+    width: 50px;
+    margin: 0 10px 0 10px
+}

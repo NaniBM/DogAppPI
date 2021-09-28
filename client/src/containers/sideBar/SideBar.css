@@ -1,0 +1,20 @@
+.sideBar {
+    height: 85vh;
+    width: 15vw;
+    background-color: cornflowerblue;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.filters {
+    margin-top: 5em;
+    margin-left: 0.75em;
+}
+
+p {
+    padding: 1em 0em 1em 0em ;
+}
+
+button {
+    margin: 1em 0em 1em 0em ;
+}

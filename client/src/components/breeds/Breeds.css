@@ -1,0 +1,9 @@
+.breeds {
+    background-color: rgb(179, 187, 235);
+    margin:2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
