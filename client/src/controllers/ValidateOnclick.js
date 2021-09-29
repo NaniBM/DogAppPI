@@ -10,7 +10,6 @@ export const validateOnClick = (payload, newTemperament) => {
   ) {
     alert("Check all the empty fields, add at least one temperament");
   } else {
-    console.log(payload);
     addNewBreed(payload);
   }
 };

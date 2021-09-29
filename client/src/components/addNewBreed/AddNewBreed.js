@@ -80,6 +80,7 @@ export default function CreateBreed() {
   const handleOnclick = (e) => {
     e.preventDefault();
     validateOnClick(payload, newTemperament);
+    alert('new breed added')
   };
 
   return (

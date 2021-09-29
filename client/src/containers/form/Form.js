@@ -120,7 +120,7 @@ export default function Form(props) {
             </div>
           );
         })}
-
+      {/*enter image*/}
         <input
           className={props.errors.errors ? "disabled" : "active"}
           disabled={props.errors.error}
