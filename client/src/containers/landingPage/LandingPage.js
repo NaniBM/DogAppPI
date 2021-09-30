@@ -31,9 +31,13 @@ export default function LandingPage() {
       </div>
       <p className="about">An app to learn about our best friends!</p>
       <div className="bubble2">
-        <div >
+        <div>
           <Link to="/home">
-            <img className="arrow" src={arrow} alt="An arrow, the enter button" />
+            <img
+              className="arrow"
+              src={arrow}
+              alt="An arrow, the enter button"
+            />
           </Link>
         </div>
       </div>

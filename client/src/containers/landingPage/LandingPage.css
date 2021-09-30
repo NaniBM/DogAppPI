@@ -3,16 +3,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Neuton:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Neuton", serif;
-}
-
 .landingPage {
-  width: 100vw;
+  position: absolute;
+  width: 100%;
   height: 100vh;
   background-color: #e0e0e0;
+  overflow: hidden;
+  z-index: -2;
+  text-align: center;
 }
 
 .landingPage:before {
@@ -44,7 +42,6 @@
   fill: #32e0c4;
   opacity: 80%;
   transform: rotateY(180deg);
-  z-index: 20;
 }
 
 .logocontainer {
@@ -97,7 +94,7 @@ h1:nth-child(2) {
   margin-right: auto;
   bottom: 25vh;
   max-width: 100%;
-  z-index: 0;
+  z-index: -1;
 }
 .bubble2 {
   position: absolute;
@@ -114,6 +111,7 @@ h1:nth-child(2) {
   position: absolute;
   right: 0;
   bottom: 0;
+  margin-bottom: 0;
   width: 400vw;
   height: 23vh;
   fill: #32e0c4;
@@ -160,10 +158,7 @@ h1:nth-child(2) {
   .about {
     position: absolute;
     z-index: 30;
-    left: 0;
     right: 0;
-    margin-left: auto;
-    margin-bottom: auto;
   }
 
   .arrow {
@@ -174,17 +169,9 @@ h1:nth-child(2) {
 }
 
 @media only screen and (min-width: 1008px) {
- 
-    .svg1 {
-        position: absolute;
-        z-index: 2;
-        left: 0;
-        height: 20vh;
-        width: 220vw;
-      }
-
-      .about {
-        top: 10vh;
-        left: 55vw;
-    }
+  .about {
+    top: 10vh;
+    right: 0;
+    margin-right: 5vw;
+  }
 }
