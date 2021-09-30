@@ -1,11 +1,100 @@
 .NavBar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 15vh;
-    background-color: aquamarine;
-    box-sizing: border-box;
+  margin: 0;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home img {
+  border-radius: 50px;
+  max-width: 3em;
+  height: auto;
+}
+
+.logo img {
+  border-radius: 50%;
+}
+
+.textLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.NavLogo {
+  position: relative;
+  box-shadow: 0px 2.5px 4px #0d9598;
+  font-family: "Neuton", serif;
+  font-size: 1em;
+  font-weight: 900;
+  background-color: #0d9598;
+  color: #eeeeee;
+  display: block;
+  padding: 0 0.5em 0.4em 0.5em;
+  border: #39babd solid 1px;
+  text-decoration: none;
+}
+
+.NavLogo:nth-child(2) {
+  position: absolute;
+  background-color: #eeeeee;
+  color: #0d9598;
+  clip-path: inset(-1% -1% 50% -1%);
+}
+
+.AddBreed {
+  position: absolute;
+  right: 0;
+  margin-right: 0.6em;
+  max-width: 30vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.AddBreed img {
+  border-radius: 50px;
+  max-width: 2em;
+  height: auto;
+}
+
+.addLink {
+  font-family: "Roboto", sans-serif;
+  color: #212121;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.9em;
+}
+.endNavLine {
+  position: absolute;
+  margin-top: 10vh;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 1px;
+  background-color: #0d9598;
+  opacity: 30%;
+}
+
+@media only screen and (min-width: 640px) {
+  .home {
+    margin-left: 5em;
+    font-size: 1.3em;
   }
-  
+
+  .AddBreed {
+    margin-right: 7em;
+    font-size: 1.3em;
+  }
+}
