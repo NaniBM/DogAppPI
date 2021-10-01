@@ -1,0 +1,22 @@
+.sortComponent {
+
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #2ECC71;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    font-size: 0.6em;
+    color: #212121;
+    background-color: #32E0C4;
+    font-family: "Roboto", sans-serif;
+  }
+
+  @media only screen and (min-width: 640px) {
+    
+  .sortComponent {
+      font-size: 0.5em;
+  }
+
+}

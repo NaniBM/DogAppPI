@@ -4,10 +4,16 @@ import "./Breed.css";
 export default function Breed({ name, image, temperament, weight }) {
   return (
     <div className="breed">
-      <p>{name}</p>
-      <img src={image} alt={"A " + name} />
-      <p>{temperament}</p>
-      <p>{weight + " kilogramos"}</p>
+      <img className="dogImg" src={image} alt={"A " + name} />
+      <div className="cardGlass"></div>
+      <div className="cardInfo">
+      <h3>{name}</h3> 
+      <h4>Moods:</h4>
+          <p>{temperament}</p>
+      <h4>Weight:</h4>
+          <p>{weight + " kilogramos"}</p>
+      </div>
+      
     </div>
   );
 }

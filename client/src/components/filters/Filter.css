@@ -1,0 +1,45 @@
+.selectBreed::before,
+::after {
+  box-sizing: border-box;
+  border: 1px solid #32e0c4;
+  
+}
+
+.selectBreed {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+  font-size: inherit;
+  width: 90%;
+  border: 1px solid #32e0c4;
+  border-radius: 0.2em;
+  padding: 0.25em 0.5em;
+  font-size: 0.8em;
+  cursor: pointer;
+  line-height: 1.1;
+}
+
+.selectMood::after {
+  box-sizing: border-box;
+  border: 1px solid #32e0c4;
+}
+
+select:focus {
+    border: 2px solid #32e0c4;
+  }
+
+.selectMood {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+  font-size: inherit;
+  width: 90%;
+  border: 1px solid #32e0c4;
+  border-radius: 0.2em;
+  padding: 0.25em 0.5em;
+  font-size: 0.8em;
+  cursor: pointer;
+  line-height: 1.1;
+}

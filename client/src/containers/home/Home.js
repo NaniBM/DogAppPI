@@ -5,9 +5,9 @@ import Pagination from "../../components/pagination/Pagination";
 
 export default function HomeContainer() {
   return (
-    <div className="container">
+    <div className="container">      
       <SideBar />
-      <Pagination />
+      <Pagination />      
     </div>
   );
 }

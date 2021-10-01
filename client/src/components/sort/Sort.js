@@ -10,5 +10,5 @@ export default function Sort({ type, order }) {
     dispatch(sortBreeds(type, order));
   };
 
-  return <button onClick={handleOnClick}>{order}</button>;
+  return <button className='sortComponent'onClick={handleOnClick}>{order}</button>;
 }

@@ -8,8 +8,8 @@ import { getBreed } from "../../actions/actions";
 export default function Pagination() {
   const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage] = useState(8);
-  const [pageNumberLimit] = useState(8);
-  const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(8);
+  const [pageNumberLimit] = useState(6);
+  const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(6);
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
 
   const dispatch = useDispatch();
@@ -59,6 +59,19 @@ export default function Pagination() {
 
   return currentItems.length ? (
     <div className="pagination">
+       <ul className="pageNumbers">
+        <Pages
+          pageNumbers={pageNumbers}
+          paginate={paginate}
+          currentPage={currentPage}
+          maxPageNumberLimit={maxPageNumberLimit}
+          minPageNumberLimit={minPageNumberLimit}
+          handlePrevButton={handlePrevButton}
+          handleNextButton={handleNextButton}
+          pageDecrementBtn={pageDecrementBtn}
+          pageIncrementBtn={pageIncrementBtn}
+        />
+      </ul>
       <Breeds items={currentItems} />
       <ul className="pageNumbers">
         <Pages

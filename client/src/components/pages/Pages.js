@@ -1,4 +1,5 @@
 import React from "react";
+import { GrNext, GrPrevious } from "react-icons/gr";
 import "./Pages.css";
 
 export default function Pages({
@@ -15,11 +16,11 @@ export default function Pages({
   return (
     <>
       <li>
-        <button
+        <button className='buttonPrevNext'
           onClick={handlePrevButton}
           disabled={currentPage === pageNumbers[0] ? true : false}
         >
-          Prev
+        <GrPrevious/>
         </button>
       </li>
       {pageDecrementBtn}
@@ -30,7 +31,7 @@ export default function Pages({
               key={number}
               className={currentPage === number ? "active" : null}
             >
-              <a onClick={() => paginate(number)} className="page-link">
+              <a onClick={() => paginate(number)} className="pageLink">
                 {number}
               </a>
             </li>
@@ -41,13 +42,13 @@ export default function Pages({
       })}
       {pageIncrementBtn}
       <li>
-        <button
+        <button className='buttonPrevNext'
           onClick={handleNextButton}
           disabled={
             currentPage === pageNumbers[pageNumbers.length - 1] ? true : false
           }
         >
-          Next
+          <GrNext/>
         </button>
       </li>
     </>

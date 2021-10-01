@@ -1,5 +1,22 @@
 .container{
     display: flex;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #EEEEEE;
+    height: 100vh;
+    box-sizing: content-box;
+    width: 100%;
+
 }
+
+@media only screen and (min-width: 640px) {
+    .container{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+  
+}
+

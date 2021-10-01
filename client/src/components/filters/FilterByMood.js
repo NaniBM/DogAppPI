@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTemperaments } from "../../actions/actions";
 import { filterBy } from "../../actions/actions";
-
+import "./Filter.css";
 export default function FilterByMood() {
   const dispatch = useDispatch();
   useEffect(() => dispatch(getTemperaments()), []);
@@ -14,7 +14,7 @@ export default function FilterByMood() {
   };
 
   return (
-    <select name="selectMood" onChange={filter}>
+    <select className="selectMood" name="selectMood" onChange={filter}>
       <option key={"selectMood"} selected disabled>
         Select temperament
       </option>

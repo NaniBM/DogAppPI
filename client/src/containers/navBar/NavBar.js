@@ -24,7 +24,6 @@ export default function NavBar() {
           Add new breed
         </Link>
       </div>
-      <div className="endNavLine"></div>
     </div>
   );
 }

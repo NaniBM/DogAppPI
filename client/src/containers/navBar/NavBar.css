@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  background-color: white;
 }
 
 .home {
@@ -32,7 +33,8 @@
 
 .NavLogo {
   position: relative;
-  box-shadow: 0px 2.5px 4px #0d9598;
+  box-shadow: 0px 4px 5px #0d9598;
+  
   font-family: "Neuton", serif;
   font-size: 1em;
   font-weight: 900;
