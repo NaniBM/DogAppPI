@@ -1,10 +1,12 @@
 
 .pagination{  
     display: inline;  
-    margin:0 1em 0 1em;
     overflow: hidden;
     font-family: "Roboto", sans-serif; 
     background-color: inherit;
+    text-align: center;
+    background-color: #EEEEEE;
+    width: 100vw;
 }
 
 .pageNumbers {
@@ -13,8 +15,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button {
@@ -22,6 +24,11 @@ button {
     margin: 0 5px 0 5px
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media only screen and (min-width: 640px) {
 .pagination {

@@ -10,13 +10,23 @@ export default function DetailCard({
   life_span,
 }) {
   return (
-    <div className="detail">
-      <p>{name && name}</p>
-      <img src={image && image}></img>
-      <p>{temperament && temperament}</p>
-      <p>{weight && weight} kilograms</p>
-      <p>{height && height} meters</p>
-      <p>{life_span && life_span}</p>
+    <div className="detailContainer">
+      <img className="detailedBreed" src={image && image}></img>
+      <div className="detailedBgWhite">
+        <div className="detailedBg2"></div>
+        <div className="detailedBg1"></div>
+      </div>
+      <div className="detailedInfo">
+        <h2>{name && name}</h2>
+        <h3>Mood</h3>
+        <p>{temperament && temperament}</p>
+        <h3>weight</h3>
+        <p>{weight && weight} kilograms</p>
+        <h3>height</h3>
+        <p>{height && height} meters</p>
+        <h3>life_span</h3>
+        <p>{life_span && life_span}</p>
+      </div>
     </div>
   );
 }

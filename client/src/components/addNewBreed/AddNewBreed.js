@@ -4,6 +4,7 @@ import { getTemperaments } from "../../actions/actions";
 import { validateOnClick } from "../../controllers/ValidateOnclick";
 import { validateForm } from "../../controllers/validateForm";
 import Form from "../../containers/form/Form";
+import "./AddNewBreed.css";
 
 export default function CreateBreed() {
   const dispatch = useDispatch();
@@ -80,7 +81,7 @@ export default function CreateBreed() {
   const handleOnclick = (e) => {
     e.preventDefault();
     validateOnClick(payload, newTemperament);
-    alert('new breed added')
+    alert("new breed added");
   };
 
   return (

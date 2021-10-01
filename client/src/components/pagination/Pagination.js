@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Breeds from "../breeds/Breeds";
 import Pages from "../pages/Pages";
 import { getBreed } from "../../actions/actions";
+import Loading from "../../images/loading.gif";
 
 export default function Pagination() {
   const [currentPage, setcurrentPage] = useState(1);
@@ -13,9 +14,29 @@ export default function Pagination() {
   const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
 
   const dispatch = useDispatch();
-  useEffect(() => dispatch(getBreed()), []);
+  useEffect(() =>
+  {loadPage()
+  dispatch(getBreed())},  []);
 
   const { breeds } = useSelector((state) => state);
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (loading) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1500);
+    }
+  }, [loading]);
+
+  const loadPage = () => {
+    setLoading(!loading);
+    setTimeout(()=>{
+      setLoading(!loading); }, 1500)
+  }
+
+  if (loading) return <img src={Loading} alt="loading" />;
 
   if (breeds && !Array.isArray(breeds)) return <Breeds items={breeds} />;
   const pageNumbers = [];
@@ -59,7 +80,7 @@ export default function Pagination() {
 
   return currentItems.length ? (
     <div className="pagination">
-       <ul className="pageNumbers">
+      <ul className="pageNumbers">
         <Pages
           pageNumbers={pageNumbers}
           paginate={paginate}

@@ -4,18 +4,20 @@ import "./Form.css";
 export default function Form(props) {
   return (
     <>
-      <h2>Add new breeds</h2>
-      <form>
-        <label>Bred name</label>
+      <h2 className="addBreed">Add new breeds</h2>
+      <form className='addform'>
+        <label className='labelForm'>Bred name</label>
         <input
+          className='inputForm'
           name="name"
           type="text"
           value={props.input.name}
           onChange={props.handleChange}
         />
         {props.errors.name && <p className="danger">{props.errors.name}</p>}
-        <label>Minimum height [Centimeters]</label>
+        <label className='labelForm'>Minimum height [Centimeters]</label>
         <input
+        className='inputForm'
           name="minHeight"
           type="number"
           min="0"
@@ -26,8 +28,9 @@ export default function Form(props) {
         {props.errors.minHeight && (
           <p className="danger">{props.errors.minHeight}</p>
         )}
-        <label>Maximum height [Centimeters]</label>
+        <label className='labelForm'>Maximum height [Centimeters]</label>
         <input
+        className='inputForm'
           name="maxHeight"
           type="number"
           min="0"
@@ -38,8 +41,9 @@ export default function Form(props) {
         {props.errors.maxHeight && (
           <p className="danger">{props.errors.maxHeight}</p>
         )}
-        <label>Minimum weight [Kilograms]</label>
+        <label className='labelForm'>Minimum weight [Kilograms]</label>
         <input
+        className='inputForm'
           name="minWeight"
           type="number"
           min="0"
@@ -50,8 +54,9 @@ export default function Form(props) {
         {props.errors.minWeight && (
           <p className="danger">{props.errors.minWeight}</p>
         )}
-        <label>Maximum weight [Kilograms]</label>
+        <label className='labelForm'>Maximum weight [Kilograms]</label>
         <input
+        className='inputForm'
           name="maxWeight"
           type="number"
           min="0"
@@ -62,8 +67,9 @@ export default function Form(props) {
         {props.errors.maxWeight && (
           <p className="danger">{props.errors.maxWeight}</p>
         )}
-        <label>Minimum Life span [Years]</label>
+        <label className='labelForm'>Minimum Life span [Years]</label>
         <input
+        className='inputForm'
           name="minLifeSpan"
           type="number"
           min="0"
@@ -74,8 +80,9 @@ export default function Form(props) {
         {props.errors.minLifeSpan && (
           <p className="danger">{props.errors.minLifeSpan}</p>
         )}
-        <label>Maximum Life span [Years]</label>
+        <label className='labelForm'>Maximum Life span [Years]</label>
         <input
+        className='inputForm'
           name="maxLifeSpan"
           type="number"
           min="0"
@@ -86,18 +93,18 @@ export default function Form(props) {
         {props.errors.maxLifeSpan && (
           <p className="danger">{props.errors.maxLifeSpan}</p>
         )}
-        <label>Choose or add at least one temperament</label>
-        <select name="temperament" onChange={props.handleSelectChange}>
-          <option key={"temperament"} selected disabled></option>
+        <label className='labelForm'>Choose or add at least one temperament</label>
+        <select className='inputForm'  name="temperament" onChange={props.handleSelectChange}>
+          <option className='inputForm' key={"temperament"} selected disabled></option>
           {props.temperaments.map((mood) => {
             return (
-              <option key={mood} value={mood}>
+              <option  className='inputForm' key={mood} value={mood}>
                 {mood}
               </option>
             );
           })}
         </select>
-        <label>add a new one...</label>
+        <label className='labelForm'>or add a new one...</label>
         {props.newTemperament.map((el, i) => {
           return (
             <div key={`temperament-${i}`}>
@@ -105,6 +112,7 @@ export default function Form(props) {
                 i + 1
               }`}</label>
               <input
+              className='inputForm'
                 type="text"
                 name={`temperament-${i}`}
                 id={i}
@@ -112,17 +120,28 @@ export default function Form(props) {
                 value={el.temperament}
                 onChange={props.handleTemperamentChange}
               />
-              <input
+              </div>
+          );
+        })}
+        <input
+              className='addTemperament'
                 type="button"
                 value="Add temperament"
                 onClick={props.addTemperament}
               />
-            </div>
-          );
-        })}
-      {/*enter image*/}
-        <input
-          className={props.errors.errors ? "disabled" : "active"}
+            
+        <label className='labelForm'>Finally, you can add an image of the breed!</label>
+        <input 
+        className='inputForm'
+        type="url" 
+        name="imageUrl" 
+        id="url"
+        placeholder="https://example.com"
+        pattern="https://.*" 
+        size="30"
+        />
+        <input 
+          className={props.errors.errors ? "disabled" : "submitForm"}
           disabled={props.errors.error}
           type="submit"
           value="submit"
