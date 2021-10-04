@@ -1,12 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { filterBy } from "../../actions/actions";
+import { filterBy, setCurrentPage } from "../../actions/actions";
 import './Filter.css'
 export default function FilterByBreed() {
   const dispatch = useDispatch();
   const { allbreeds } = useSelector((state) => state);
 
   const filter = (e) => {
+    dispatch(setCurrentPage(1));
     dispatch(filterBy(e.target.value, "name"));
   };
 

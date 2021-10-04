@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Breeds from "../breeds/Breeds";
 import Pages from "../pages/Pages";
-import { getBreed } from "../../actions/actions";
+import { getBreed, setCurrentPage } from "../../actions/actions";
 import Loading from "../../images/loading.gif";
 
 export default function Pagination() {
-  const [currentPage, setcurrentPage] = useState(1);
+
+  // const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage] = useState(8);
   const [pageNumberLimit] = useState(6);
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(6);
@@ -18,7 +19,9 @@ export default function Pagination() {
   {loadPage()
   dispatch(getBreed())},  []);
 
-  const { breeds } = useSelector((state) => state);
+  const { breeds, currentPage } = useSelector((state) => state);
+
+  
 
   const [loading, setLoading] = useState(false);
 
@@ -39,6 +42,8 @@ export default function Pagination() {
   if (loading) return <img src={Loading} alt="loading" />;
 
   if (breeds && !Array.isArray(breeds)) return <Breeds items={breeds} />;
+
+
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(breeds.length / itemsPerPage); i++) {
     pageNumbers.push(i);
@@ -46,14 +51,15 @@ export default function Pagination() {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  
   const currentItems = breeds
     ? breeds.slice(indexOfFirstItem, indexOfLastItem)
     : [];
 
-  const paginate = (pageNumber) => setcurrentPage(pageNumber);
+  const paginate = (pageNumber) => dispatch(setCurrentPage(pageNumber));
 
   const handlePrevButton = () => {
-    setcurrentPage(currentPage - 1);
+    dispatch(setCurrentPage(currentPage - 1));
     if ((currentPage - 1) % pageNumberLimit === 0) {
       setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
       setminPageNumberLimit(minPageNumberLimit - pageNumberLimit);
@@ -61,7 +67,7 @@ export default function Pagination() {
   };
 
   const handleNextButton = () => {
-    setcurrentPage(currentPage + 1);
+    dispatch(setCurrentPage(currentPage + 1));
     if (currentPage + 1 > maxPageNumberLimit) {
       setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
       setminPageNumberLimit(minPageNumberLimit + pageNumberLimit);

@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { getDogs, getDogsById } = require("../controllers/dogs");
+const { getDogs } = require("../controllers/dogs");
+const { getDogsById } = require("../controllers/dogById");
 
 router.get("/", function (req, res) {
   getDogs(req, res);

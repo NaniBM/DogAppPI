@@ -5,6 +5,7 @@ const GET_TEMPERAMENTS = "GET_TEMPERAMENTS";
 const FILTER = "FILTER";
 const SEARCH_BY_NAME = "SEARCH_BY_NAME";
 const SORT = "SORT";
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 
 module.exports = {
   ADD_NEW_BREED,
@@ -13,5 +14,6 @@ module.exports = {
   GET_TEMPERAMENTS,
   FILTER,
   SEARCH_BY_NAME,
+  SET_CURRENT_PAGE,
   SORT,
 };

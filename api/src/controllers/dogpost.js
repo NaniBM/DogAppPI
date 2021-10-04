@@ -3,7 +3,7 @@ const { Temperament, Dog } = require("../db.js");
 const addNewBreed = async (req, res) => {
   const { name, height, weight, life_span, image, temperament } = req.body;
   try {
-    //adding new Breed to the DB
+    //adding new Breed to the Database
     const [breed, created] = await Dog.findOrCreate({
       where: {
         name: name[0].toUpperCase() + name.slice(1),
@@ -16,7 +16,7 @@ const addNewBreed = async (req, res) => {
       },
     });
 
-    //if the new Breed was created, its temperaments are added to the table Temperament
+    //if the new Breed was created, the temperaments are added to the table Temperament
     if (created) {
       for (let mood of temperament) {
         const [newMood] = await Temperament.findOrCreate({

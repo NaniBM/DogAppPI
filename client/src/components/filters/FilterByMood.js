@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemperaments } from "../../actions/actions";
-import { filterBy } from "../../actions/actions";
+import { getTemperaments, filterBy,setCurrentPage } from "../../actions/actions";
+
 import "./Filter.css";
 export default function FilterByMood() {
   const dispatch = useDispatch();
@@ -9,8 +9,8 @@ export default function FilterByMood() {
   const { temperaments } = useSelector((state) => state);
 
   const filter = (e) => {
+    dispatch(setCurrentPage(1));
     dispatch(filterBy(e.target.value, "temperament"));
-    console.log(typeof e.target.value);
   };
 
   return (

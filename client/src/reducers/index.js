@@ -5,6 +5,7 @@ import {
   FILTER,
   SEARCH_BY_NAME,
   SORT,
+  SET_CURRENT_PAGE,
 } from "../actions/actions_types";
 
 import { filter } from "../controllers/filters";
@@ -18,6 +19,7 @@ const initialState = {
   temperaments: [],
   breeds: [],
   detailed: {},
+  currentPage: 1
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -53,6 +55,12 @@ const rootReducer = (state = initialState, action) => {
           action.payload.attribute1
         ),
       };
+
+    case SET_CURRENT_PAGE: 
+    return {
+      ...state,
+      currentPage: action.payload
+    }
     case SORT:
       const currentState = state.breeds;
       if (!Array.isArray(state.breeds) || !state.breeds.length) {

@@ -8,7 +8,7 @@ const temperamentList = async () => {
     let { data } = await axios.get(
       `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`
     );
-    let moods = [];
+    let moods = [];   
     data.forEach((breed) => {
       if (breed.temperament) {
         let breedMood = breed.temperament.split(", ");

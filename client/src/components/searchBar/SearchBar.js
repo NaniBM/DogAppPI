@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { searchByName, getBreed } from "../../actions/actions";
+import { searchByName, getBreed, setCurrentPage } from "../../actions/actions";
 import "./SearchBar.css";
 import { IoSearchOutline } from "react-icons/io5";
 
@@ -9,6 +9,7 @@ export default function Search() {
 
   const handleChange = (e) => {
     if (e.target.value !== "") {
+      dispatch(setCurrentPage(1));
       dispatch(searchByName(e.target.value));
     }
   };

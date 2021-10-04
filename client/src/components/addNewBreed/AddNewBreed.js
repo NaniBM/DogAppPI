@@ -19,6 +19,7 @@ export default function CreateBreed() {
     maxWeight: "",
     minLifeSpan: "",
     maxLifeSpan: "",
+    imageUrl:""
   });
 
   const [errors, setErrors] = useState({

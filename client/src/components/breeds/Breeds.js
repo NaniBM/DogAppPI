@@ -15,6 +15,7 @@ export default function Breeds({ items }) {
                 image={breed.image}
                 temperament={breed.temperament}
                 weight={breed.weight.metric}
+                height={breed.height.metric}
               />
             </NavLink>
           </div>
