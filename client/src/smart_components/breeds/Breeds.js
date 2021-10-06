@@ -1,5 +1,5 @@
 import React from "react";
-import Breed from "../../containers/breed/Breed";
+import Breed from "../../present_component/breed/Breed";
 import { NavLink } from "react-router-dom";
 import "./Breeds.css";
 
@@ -12,10 +12,9 @@ export default function Breeds({ items }) {
             <NavLink to={`/home/${breed.id}`}>
               <Breed
                 name={breed.name}
-                image={breed.image}
-                temperament={breed.temperament}
+                image={breed.image}                
                 weight={breed.weight.metric}
-                height={breed.height.metric}
+                temperament={breed.temperament}
               />
             </NavLink>
           </div>

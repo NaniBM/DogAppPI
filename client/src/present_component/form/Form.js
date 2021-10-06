@@ -132,15 +132,6 @@ export default function Form(props) {
             
         <label className='labelForm'>Finally, you can add an image of the breed!</label>
         <input 
-        className='inputForm'
-        type="url" 
-        name="imageUrl" 
-        id="url"
-        placeholder="https://example.com"
-        pattern="https://.*" 
-        size="30"
-        />
-        <input 
           className={props.errors.errors ? "disabled" : "submitForm"}
           disabled={props.errors.error}
           type="submit"

@@ -39,7 +39,10 @@ export default function Pagination() {
       setLoading(!loading); }, 1500)
   }
 
-  if (loading) return <img src={Loading} alt="loading" />;
+  if (loading) return (
+    <div className="pagination">
+      <img src={Loading} alt="loading" />
+    </div>);
 
   if (breeds && !Array.isArray(breeds)) return <Breeds items={breeds} />;
 

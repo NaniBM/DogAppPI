@@ -75,7 +75,7 @@
 
 .detailedInfo h2 {
   font-size: 1.3em;
-  margin: auto;
+  margin: 1.5em  auto 0 auto;
 }
 
 .detailedInfo h3 {
@@ -84,8 +84,9 @@
 }
 
 .detailedInfo p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto 0 auto;
+  width: 300px;
+
 }
 
 @media only screen and (min-width: 640px) {

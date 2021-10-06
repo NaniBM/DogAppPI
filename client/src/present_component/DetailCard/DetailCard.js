@@ -1,5 +1,6 @@
 import React from "react";
 import "./DetailCard.css";
+import Loading from "../../images/loading.gif";
 
 export default function DetailCard({
   name,
@@ -8,8 +9,13 @@ export default function DetailCard({
   weight,
   height,
   life_span,
+  loading,
 }) {
-  return (
+  return loading ? (
+    <div className="detailContainer">
+      <img src={Loading} alt="loading" />
+    </div>
+  ) : (
     <div className="detailContainer">
       <img className="detailedBreed" src={image && image}></img>
       <div className="detailedBgWhite">
@@ -18,7 +24,7 @@ export default function DetailCard({
       </div>
       <div className="detailedInfo">
         <h2>{name && name}</h2>
-        <h3>Mood</h3>
+        <h3>Temperaments</h3>
         <p>{temperament && temperament}</p>
         <h3>weight</h3>
         <p>{weight && weight} kilograms</p>

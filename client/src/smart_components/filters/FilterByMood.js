@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTemperaments, filterBy,setCurrentPage } from "../../actions/actions";
-
+import {
+  getTemperaments,
+  filterBy,
+  setCurrentPage,
+} from "../../actions/actions";
 import "./Filter.css";
+
 export default function FilterByMood() {
   const dispatch = useDispatch();
   useEffect(() => dispatch(getTemperaments()), []);

@@ -4,8 +4,8 @@ const {
   GET_TEMPERAMENTS,
   FILTER,
   SEARCH_BY_NAME,
-  SORT,
   SET_CURRENT_PAGE,
+  SORT  
 } = require("./actions_types");
 
 const axios = require("axios");
@@ -60,16 +60,16 @@ export const searchByName = (name) => {
   };
 };
 
-export const sortBreeds = (type, order) => {
-  return {
-    type: SORT,
-    payload: { type, order },
-  };
-};
-
 export const setCurrentPage = (payload) => {
   return {
     type: SET_CURRENT_PAGE,
     payload,
+  };
+};
+
+export const sortBreeds = (type, order) => {
+  return {
+    type: SORT,
+    payload: { type, order },
   };
 };

@@ -8,13 +8,13 @@ export default function NavBar() {
   return (
     <div className="NavBar">
       <div className="home">
-        <Link className="textLogo" to="/home">
+        <a className="textLogo" href="/home">
           <img src={logo} className="homeLogo" alt="logo: a dog´s house" />
           <div className="textLogo">
             <h1 className="NavLogo">Good-Boy </h1>
             <h1 className="NavLogo">Good-Boy</h1>
           </div>
-        </Link>
+        </a>
       </div>
       <div className="AddBreed">
         <Link className="addLink" to="/addbreed">

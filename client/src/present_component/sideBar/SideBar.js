@@ -1,11 +1,12 @@
 import React from "react";
 import "./SideBar.css";
-import Search from "../../components/searchBar/SearchBar";
-import FilterByBreed from "../../components/filters/FilterByBreed";
-import FilterByMood from "../../components/filters/FilterByMood";
-import Sort from "../../components/sort/Sort";
+import Search from "../../smart_components/searchBar/SearchBar";
+import FilterByBreed from "../../smart_components/filters/FilterByBreed";
+import FilterByMood from "../../smart_components/filters/FilterByMood";
+import Sort from "../../smart_components/sort/Sort";
 import { GiWeight } from "react-icons/gi";
 import { TiSortAlphabeticallyOutline } from "react-icons/ti";
+
 export default function SideBar() {
   return (
     <div className="sideBar">
