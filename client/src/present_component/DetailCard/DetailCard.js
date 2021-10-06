@@ -21,8 +21,7 @@ export default function DetailCard({
       <div className="detailedBgWhite">
         <div className="detailedBg2"></div>
         <div className="detailedBg1"></div>
-      </div>
-      <div className="detailedInfo">
+        <div className="detailedInfo">
         <h2>{name && name}</h2>
         <h3>Temperaments</h3>
         <p>{temperament && temperament}</p>
@@ -33,6 +32,8 @@ export default function DetailCard({
         <h3>life_span</h3>
         <p>{life_span && life_span}</p>
       </div>
+      </div>
+      
     </div>
   );
 }

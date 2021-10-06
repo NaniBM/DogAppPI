@@ -61,12 +61,9 @@
 .detailedInfo {
   position: absolute;
   background-color: transparent;
-  z-index: 3;
-  top: 35%;
-  bottom: 0;
+  z-index: 6;
   width: 315px;
   height: 340px;
-  border-radius: 20px;
   text-align: center;  
   margin-bottom: auto;
   margin-top: auto;
@@ -101,9 +98,12 @@
   }
 
   .detailedInfo{
-    top: 36%;
     width: 380px;
     height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .detailedBg2 {
@@ -114,7 +114,6 @@
   .detailedBg1 {
     width: 250px;
     height: 250px;
-    
   }
   
 }
